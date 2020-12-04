@@ -1,6 +1,3 @@
-common = require('./common')
+result = require('./common').getNumTreesEncountered(1, 3);
 
-const treeCoordinates = common.getTreeCoordinates();
-const slopeCoordinates = common.getSlopeCoordinates(1, 3);
-
-console.log(common.getNumberOfTreesEncountered(treeCoordinates, slopeCoordinates));
+console.log(result);

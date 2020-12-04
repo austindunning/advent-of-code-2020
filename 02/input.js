@@ -1,4 +1,5 @@
-exports.getInput = () => `
+exports.getInput = () =>
+  `
 2-4 p: vpkpp
 6-16 b: bbbbbbbbbbbbbbbpb
 6-7 z: zzfzzdz
@@ -999,5 +1000,6 @@ exports.getInput = () => `
 7-13 d: fddcdfgvbmpdd
 4-5 s: rsssw
 2-14 c: jckbwnnlkcmvnwtj
-`.trim()
-.split('\n');
+`
+    .trim()
+    .split('\n');

@@ -1,4 +1,5 @@
-exports.getInput = () => `
+exports.getInput = () =>
+  `
 1788
 1627
 1883
@@ -199,6 +200,7 @@ exports.getInput = () => `
 1573
 1908
 1903
-`.trim()
-.split('\n')
-.map(Number);
+`
+    .trim()
+    .split('\n')
+    .map(Number);

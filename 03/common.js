@@ -1,28 +1,22 @@
 input = require('./input').getInput();
 
-exports.getTreeCoordinates = () => {
-    const trees = [];
-    for (var y = 0; y < input.length; y++) {
-        for (var x = 0; x < input[y].length; x++) {
-            if (input[y][x] === '#') trees.push(`${x},${y}`);
-        }
+exports.getNumTreesEncountered = (rise, run) => {
+  const trees = [];
+  for (var y = 0; y < input.length; y++) {
+    for (var x = 0; x < input[y].length; x++) {
+      if (input[y][x] === '#') trees.push(`${x},${y}`);
     }
-    return trees;
-}
+  }
 
-exports.getSlopeCoordinates = (rise, run) => {
-    let [x, y] = [0, 0];
-    const coordinates = [];
-    while (y <= input.length) {
-        x += run;
-        y += rise;
-        if (x >= input[0].length)
-            x -= input[0].length;
+  let [slopeX, slopeY] = [0, 0];
+  const coordinates = [];
+  while (slopeY <= input.length) {
+    slopeX += run;
+    slopeY += rise;
+    if (slopeX >= input[0].length) slopeX -= input[0].length;
 
-        coordinates.push(`${x},${y}`);
-    }
-    return coordinates;
-}
+    coordinates.push(`${slopeX},${slopeY}`);
+  }
 
-exports.getNumberOfTreesEncountered = (treeCoordinates, slopeCoordinates) =>
-    slopeCoordinates.filter(x => treeCoordinates.includes(x)).length;
+  return coordinates.filter((x) => trees.includes(x)).length;
+};
