@@ -8,17 +8,17 @@ exports.getTrees = () => {
     }
   }
   return trees;
-}
+};
 
 exports.getNumTreesEncountered = (trees, rise, run) => {
-  let [slopeX, slopeY] = [0, 0];
+  let [x, y] = [0, 0];
   const coordinates = [];
-  while (slopeY <= input.length) {
-    slopeX += run;
-    slopeY += rise;
-    if (slopeX >= input[0].length) slopeX -= input[0].length;
+  while (y <= input.length) {
+    x += run;
+    y += rise;
+    if (x >= input[0].length) x -= input[0].length;
 
-    coordinates.push(`${slopeX},${slopeY}`);
+    coordinates.push(`${x},${y}`);
   }
 
   return coordinates.filter((x) => trees.includes(x)).length;
