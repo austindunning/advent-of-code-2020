@@ -1,6 +1,4 @@
-input = require('./input').getInput()
-    .split('\n')
-    .map(Number);
+input = require('./input').getInput();
 
 let values = {};
 

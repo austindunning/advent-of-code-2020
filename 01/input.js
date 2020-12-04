@@ -199,4 +199,6 @@ exports.getInput = () => `
 1573
 1908
 1903
-`.trim();
+`.trim()
+.split('\n')
+.map(Number);
