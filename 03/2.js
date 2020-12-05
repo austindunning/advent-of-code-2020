@@ -14,6 +14,4 @@ const numTreesEncounteredBySlope = slopes.map((x) =>
   common.getNumTreesEncountered(trees, ...x)
 );
 
-const result = numTreesEncounteredBySlope.reduce((a, b) => a * b);
-
-console.log(result);
+console.log(numTreesEncounteredBySlope.reduce((a, b) => a * b));
