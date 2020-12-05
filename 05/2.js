@@ -1,5 +1,14 @@
-seatIds = require('./common').getSeatIds();
+seatIds = require('./common')
+  .getSeatIds()
+  .sort((a, b) => a - b);
 
-for (var i = Math.min(...seatIds); i < Math.max(...seatIds); i++) {
-  if (!seatIds.includes(i)) console.log(i);
+let i = Math.min(...seatIds);
+
+for (var j = 0; j < seatIds.length; j++) {
+  if (seatIds[j] !== i) {
+    console.log(i);
+    return;
+  }
+
+  i++;
 }

@@ -1,5 +1,3 @@
 common = require('./common');
 
-const trees = common.getTrees();
-
-console.log(common.getNumTreesEncountered(trees, 1, 3));
+console.log(common.getNumTreesEncountered(1, 3));

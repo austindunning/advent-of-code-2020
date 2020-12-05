@@ -1,14 +1,11 @@
 input = require('./input').getInput();
 
-let valid = 0;
-
-input.forEach((x) => {
+const valid = input.filter((x) => {
   const [, min, max, letter, password] = [
     ...x.matchAll(/(\d+)-(\d+) (\w): (\w+)/g),
   ][0];
-
   const occurences = password.split('').filter((y) => y === letter).length;
-  if (occurences >= min && occurences <= max) valid++;
+  return occurences >= min && occurences <= max;
 });
 
-console.log(valid);
+console.log(valid.length);

@@ -8,10 +8,8 @@ const slopes = [
   [2, 1],
 ];
 
-const trees = common.getTrees();
-
 const numTreesEncounteredBySlope = slopes.map((x) =>
-  common.getNumTreesEncountered(trees, ...x)
+  common.getNumTreesEncountered(...x)
 );
 
 console.log(numTreesEncounteredBySlope.reduce((a, b) => a * b));

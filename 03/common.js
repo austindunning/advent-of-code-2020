@@ -1,6 +1,6 @@
 input = require('./input').getInput();
 
-exports.getTrees = () => {
+const getTrees = () => {
   const trees = [];
   for (var y = 0; y < input.length; y++) {
     for (var x = 0; x < input[y].length; x++) {
@@ -10,7 +10,7 @@ exports.getTrees = () => {
   return trees;
 };
 
-exports.getNumTreesEncountered = (trees, rise, run) => {
+exports.getNumTreesEncountered = (rise, run) => {
   let [x, y] = [0, 0];
   const coordinates = [];
   while (y <= input.length) {
@@ -21,5 +21,5 @@ exports.getNumTreesEncountered = (trees, rise, run) => {
     coordinates.push(`${x},${y}`);
   }
 
-  return coordinates.filter((x) => trees.includes(x)).length;
+  return coordinates.filter((x) => getTrees().includes(x)).length;
 };
