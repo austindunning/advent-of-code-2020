@@ -20,6 +20,10 @@ const passports = input.map((x) => {
 });
 
 const isValid = (passportFields) =>
-  Object.entries(requiredFields).every(x => Object.keys(passportFields).includes(x[0]) && x[1].test(passportFields[x[0]]));
+  Object.entries(requiredFields).every(
+    (x) =>
+      Object.keys(passportFields).includes(x[0]) &&
+      x[1].test(passportFields[x[0]])
+  );
 
-console.log(passports.filter(x => isValid(x)).length);
+console.log(passports.filter((x) => isValid(x)).length);
