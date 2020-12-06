@@ -2,10 +2,11 @@ input = require('./input').getInput();
 
 const getRowOrColumn = (arr, instructions) => {
   instructions.forEach((x) => {
+    const halfIndex = arr.length / 2;
     if (['B', 'R'].includes(x)) {
-      arr.splice(0, arr.length / 2);
+      arr.splice(0, halfIndex);
     } else {
-      arr.splice(arr.length / 2);
+      arr.splice(halfIndex);
     }
   });
   return arr[0];
