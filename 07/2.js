@@ -20,13 +20,3 @@ input.forEach((x) => {
 const getDirectlyContainingBags = (colours) => {
   return colours.map((x) => bags[x]);
 };
-
-let containingBags = getDirectlyContainingBags(['shiny gold']);
-let total = [...containingBags];
-while (containingBags.length > 0) {
-  let asdf = containingBags.map((x) => Object.keys(x)).flat();
-  containingBags = getDirectlyContainingBags(asdf);
-  total = total.concat(containingBags);
-}
-
-console.log(total);

@@ -15,11 +15,11 @@ const getDirectlyContainingBags = (colours) => {
     .flat();
 };
 
-let containingBags = getDirectlyContainingBags(['shiny gold']);
-let total = [...containingBags];
-while (containingBags.length > 0) {
-  containingBags = getDirectlyContainingBags(containingBags);
-  total = total.concat(containingBags);
+let shinyGoldContainers = getDirectlyContainingBags(['shiny gold']);
+const totalShinyGoldContainers = new Set();
+while (shinyGoldContainers.length > 0) {
+  shinyGoldContainers.forEach((x) => totalShinyGoldContainers.add(x));
+  shinyGoldContainers = getDirectlyContainingBags(shinyGoldContainers);
 }
 
-console.log(new Set(total).size);
+console.log(totalShinyGoldContainers.size);
